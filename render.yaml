@@ -1,0 +1,23 @@
+# Blueprint do Render. Permite deploy de 1 clique via "New + > Blueprint".
+# Por padrao sobe em MODO DEMO (VITE_USE_MOCK=true), entao o app ja funciona
+# sem back-end. Para integrar o back-end real: troque VITE_USE_MOCK para "false"
+# e defina VITE_API_URL com a URL publica da sua API FastAPI.
+services:
+  - type: web
+    name: ecoponto-frontend
+    env: node
+    plan: free
+    region: oregon
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_VERSION
+        value: 20.11.1
+      # MODO DEMO ligado por padrao (dados simulados + minigame simulado).
+      # Troque para "false" quando for integrar o back-end real.
+      - key: VITE_USE_MOCK
+        value: "true"
+      # URL publica do back-end FastAPI. So e usada quando VITE_USE_MOCK=false.
+      # Ex.: https://ecoponto-api.onrender.com
+      - key: VITE_API_URL
+        sync: false

@@ -1,0 +1,171 @@
+/* ============================================================
+   EcoPonto · Base + Reset + Layout
+   ============================================================ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: 'ss01', 'cv01';
+  overscroll-behavior-y: none;
+}
+
+/* Fundo ambiente no desktop (fora do "telefone") */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(60% 50% at 20% 0%, rgba(0, 168, 90, 0.10), transparent 70%),
+    radial-gradient(55% 45% at 90% 100%, rgba(0, 168, 90, 0.08), transparent 70%),
+    linear-gradient(180deg, #eef4f0 0%, #e7efe9 100%);
+}
+
+#root {
+  min-height: 100dvh;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  color: var(--navy);
+  letter-spacing: -0.02em;
+  line-height: 1.12;
+  font-weight: 700;
+}
+
+a {
+  color: var(--green-600);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: inherit;
+}
+
+input, textarea, select {
+  font-family: inherit;
+  font-size: 16px; /* evita zoom no iOS */
+  color: var(--ink);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+ul { list-style: none; }
+
+:focus-visible {
+  outline: 2px solid var(--green-500);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+::selection {
+  background: var(--green-200);
+  color: var(--green-900);
+}
+
+/* ---- Shell do app: coluna estilo telefone ---- */
+.app-shell {
+  position: relative;
+  width: 100%;
+  max-width: var(--app-max);
+  margin: 0 auto;
+  min-height: 100dvh;
+  height: 100dvh;
+  background: var(--bg);
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--sh-lg);
+  overflow: hidden;
+}
+
+@media (min-width: 480px) {
+  .app-shell {
+    margin: 24px auto;
+    min-height: calc(100dvh - 48px);
+    height: calc(100dvh - 48px);
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+  }
+}
+
+/* Area de conteudo rolavel */
+.screen {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.screen-scroll {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Espaco para a bottom nav nas telas autenticadas */
+.has-nav .screen-scroll {
+  padding-bottom: calc(var(--nav-h) + env(safe-area-inset-bottom, 0px) + 12px);
+}
+
+.pad {
+  padding: 0 var(--pad);
+}
+
+/* Scrollbar discreta */
+.screen-scroll::-webkit-scrollbar { width: 0; height: 0; }
+
+/* Util */
+.stack { display: flex; flex-direction: column; }
+.row { display: flex; align-items: center; }
+.between { justify-content: space-between; }
+.center { align-items: center; justify-content: center; }
+.gap-4 { gap: 4px; }
+.gap-8 { gap: 8px; }
+.gap-12 { gap: 12px; }
+.gap-16 { gap: 16px; }
+.grow { flex: 1; }
+.muted { color: var(--gray-500); }
+.tiny { font-size: 12px; }
+.small { font-size: 13px; }
+.center-text { text-align: center; }
+.mono-num { font-variant-numeric: tabular-nums; }
+
+.spin {
+  animation: spin 0.9s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

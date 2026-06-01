@@ -1,0 +1,90 @@
+/* ============================================================
+   EcoPonto · Design Tokens
+   Paleta extraida do Figma. Verde como cor primaria,
+   dourado para pontos/tickets, vermelho para erro.
+   ============================================================ */
+
+:root {
+  /* ---- Verde (marca) ---- */
+  --green-50:  #F0FAF5;
+  --green-100: #E6F6EF;
+  --green-200: #C6EAD8;
+  --green-300: #8FD9B5;
+  --green-400: #34C27D;
+  --green-500: #00A85A;   /* primaria */
+  --green-600: #00934F;
+  --green-700: #006D38;
+  --green-800: #00582E;
+  --green-900: #003D16;
+
+  /* ---- Tinta / texto ---- */
+  --navy:      #021433;   /* titulos */
+  --ink:       #1A1C1E;
+  --ink-700:   #3D4A3E;
+  --gray-600:  #57605D;
+  --gray-500:  #6C7278;
+  --gray-400:  #868686;
+  --gray-300:  #B8BEBC;
+  --gray-200:  #DBE5E0;
+  --gray-100:  #EEF2F0;
+  --gray-50:   #F8FAF9;
+
+  /* ---- Acentos ---- */
+  --gold:      #FFCC00;
+  --gold-soft: #FFE16D;
+  --gold-deep: #A16603;
+  --red:       #FF383C;
+  --red-soft:  #FFE6E7;
+  --red-deep:  #6B1416;
+  --blue:      #4285F4;
+
+  /* ---- Medalhas ---- */
+  --medal-gold:   #FFD700;
+  --medal-silver: #C0C0C0;
+  --medal-bronze: #CD7F32;
+
+  /* ---- Superficies ---- */
+  --bg:        #FBFDFB;
+  --surface:   #FFFFFF;
+  --surface-2: #F4F8F5;
+  --border:    #E8EEEA;
+  --border-strong: #D7E1DB;
+
+  /* ---- Gradientes ---- */
+  --grad-brand: linear-gradient(165deg, #00C268 0%, #00A85A 42%, #007D40 100%);
+  --grad-hero:  linear-gradient(160deg, #00B863 0%, #009C53 55%, #006D38 100%);
+  --grad-soft:  linear-gradient(180deg, #ffffff 0%, var(--green-50) 100%);
+  --grad-gold:  linear-gradient(135deg, #FFD84D 0%, #FFB800 100%);
+  --grad-screen: linear-gradient(180deg, #ffffff 0%, #ffffff 24%, var(--green-500) 140%);
+
+  /* ---- Tipografia ---- */
+  --font-display: 'Sora', system-ui, sans-serif;
+  --font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
+
+  /* ---- Raios ---- */
+  --r-xs: 8px;
+  --r-sm: 12px;
+  --r-md: 16px;
+  --r-lg: 22px;
+  --r-xl: 28px;
+  --r-2xl: 34px;
+  --r-pill: 999px;
+
+  /* ---- Sombras ---- */
+  --sh-xs: 0 1px 2px rgba(2, 20, 51, 0.06);
+  --sh-sm: 0 2px 8px rgba(2, 20, 51, 0.06);
+  --sh-md: 0 8px 24px rgba(2, 20, 51, 0.08);
+  --sh-lg: 0 18px 44px rgba(2, 20, 51, 0.12);
+  --sh-green: 0 14px 30px rgba(0, 168, 90, 0.30);
+  --sh-green-sm: 0 8px 18px rgba(0, 168, 90, 0.22);
+  --sh-gold: 0 12px 26px rgba(255, 184, 0, 0.32);
+
+  /* ---- Layout ---- */
+  --app-max: 440px;
+  --nav-h: 76px;
+  --pad: 22px;
+
+  /* ---- Motion ---- */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
