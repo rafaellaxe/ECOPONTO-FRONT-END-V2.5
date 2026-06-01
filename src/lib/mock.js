@@ -22,7 +22,7 @@ const me = {
 
 // --- Outros usuarios para o ranking ---
 const others = [
-  { name: 'Rafael Colonese', points: 999999 },
+  { name: 'Rafaela Colonese', points: 999999 },
   { name: 'Pedro Rocha', points: 11240 },
   { name: 'Beatriz Lima', points: 9900 },
   { name: 'Carlos Souza', points: 5400 },
